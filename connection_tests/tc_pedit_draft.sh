@@ -13,17 +13,9 @@ hex_const="00000000"
 
 #rand-control:
 section_min="70"
-section_max="190"
+section_max="190"													
 
-bb_a_side_1_net_1=$(cat /opt/uvk/NV/etc/config.ini | grep "bb_a_side_1_net_1" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}")
-bb_a_side_1_net_2=$(cat /opt/uvk/NV/etc/config.ini | grep "bb_a_side_1_net_2" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}")
-bb_a_side_2_net_1=$(cat /opt/uvk/NV/etc/config.ini | grep "bb_a_side_1_net_1" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}") #
-bb_a_side_2_net_2=$(cat /opt/uvk/NV/etc/config.ini | grep "bb_a_side_1_net_2" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}") #
-
-#dst_ip="$bb_a_side_2_net_1"
-#src_ip="$bb_a_side_2_net_1"																
-
-logfile=$(basename -s .sh ${0})_$(printf '%(%s)T\n' -1).log #/в 3.10.0-1160.80 отсутствует по дефолту EPOCHSECONDS?/
+logfile=$(basename -s .sh ${0})_$(printf '%(%s)T\n' -1).log
 
 check_oldest(){
 max_log_files=3
